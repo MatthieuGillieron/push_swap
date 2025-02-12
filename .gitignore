@@ -1,4 +1,5 @@
-.DS_Stroe
-*.o
-*.a
+.*o
+.*a
 .vscode
+.DS_Store
+.gitignore
