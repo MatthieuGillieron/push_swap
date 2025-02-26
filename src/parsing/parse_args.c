@@ -6,13 +6,11 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:02:04 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 10:26:51 by mg               ###   ########.fr       */
+/*   Updated: 2025/02/26 10:31:54 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header/push_swap.h"
-
-#include "push_swap.h"
 
 int	check_limit(long num)
 {
