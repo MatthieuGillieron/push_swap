@@ -6,11 +6,11 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:47:35 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 10:48:02 by mg               ###   ########.fr       */
+/*   Updated: 2025/02/26 11:43:06 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/push_swap.h"
+#include "../header/push_swap.h"
 
 int	absolute(int n)
 {

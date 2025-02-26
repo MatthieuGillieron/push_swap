@@ -6,11 +6,11 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:49:59 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 10:50:38 by mg               ###   ########.fr       */
+/*   Updated: 2025/02/26 11:42:58 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/push_swap.h"
+#include "../header/push_swap.h"
 
 
 int	get_lower_position(t_stack **st)

@@ -6,11 +6,11 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:40:30 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 10:44:51 by mg               ###   ########.fr       */
+/*   Updated: 2025/02/26 11:43:28 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/push_swap.h"
+#include "../header/push_swap.h"
 
 static void	reverse(t_stack **top)
 {

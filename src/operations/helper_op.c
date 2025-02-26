@@ -6,11 +6,11 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:50:01 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 10:52:02 by mg               ###   ########.fr       */
+/*   Updated: 2025/02/26 11:42:59 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header/push_swap.h"
+#include "../header/push_swap.h"
 
 static void	reverse_both(t_stack **sa, t_stack **sb, int *mv_a, int *mv_b)
 {
