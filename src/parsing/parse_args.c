@@ -1,28 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 15:11:35 by mg                #+#    #+#             */
-/*   Updated: 2025/02/13 11:41:15 by mg               ###   ########.fr       */
+/*   Created: 2025/02/13 12:02:04 by mg                #+#    #+#             */
+/*   Updated: 2025/02/13 12:38:44 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "header/push_swap.h"
 
-# include "libft/includes/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include <stdbool.h>
-# include <stddef.h>
-
-typedef struct s_stack
-{
-
-}				t_stack;
-
-#endif
