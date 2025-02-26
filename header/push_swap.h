@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:11:35 by mg                #+#    #+#             */
-/*   Updated: 2025/02/13 11:41:15 by mg               ###   ########.fr       */
+/*   Updated: 2025/02/26 10:25:16 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,15 @@
 
 typedef struct s_stack
 {
+	int				n;
+	int				main_index;
+	int				position;
+	int				where_fit;
+	int				mv_b;
+	int				mv_a;
+	struct s_stack	*next;
+}					t_stack;
 
-}				t_stack;
+
 
 #endif
