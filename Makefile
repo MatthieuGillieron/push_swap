@@ -9,7 +9,10 @@ SRCDIR = src
 OBJDIR = obj
 
 FILES = main.c \
-		main.c \
+        operations/operations.c operations/op2.c operations/helper_op.c \
+        parsing/parse_args.c \
+        sorting/sort.c \
+        utils/1.c utils/2.c utils/free_struct.c
 
 LIBFT = $(LIBDIR)/libft/libft.a
 
