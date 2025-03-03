@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 15:11:39 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 11:43:36 by mg               ###   ########.fr       */
+/*   Updated: 2025/03/03 10:48:38 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ int	main(int ac, char **av)
 	check_args(ac, av);
 	sa = create_stack(ac, av);
 	sb = NULL;
-	size = get_stack_size(sa);
-	get_main_index(sa, size);
+	size = stack_size(sa);
+	assign_main_index(sa, size);
 	push_swap(&sa, &sb, size);
 	free_stack(&sa);
 	free_stack(&sb);

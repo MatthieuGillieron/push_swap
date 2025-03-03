@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   stack_op.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:49:50 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 11:54:04 by mg               ###   ########.fr       */
+/*   Updated: 2025/03/03 10:36:58 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-static int	get_max_index(t_stack *st)
+static int	find_max_index(t_stack *st)
 {
 	int		max_id;
 	t_stack	*s;
@@ -28,7 +28,7 @@ static int	get_max_index(t_stack *st)
 	return (max_id);
 }
 
-static void	swap(t_stack *top)
+static void	swap_top(t_stack *top)
 {
 	int	tmp;
 
@@ -42,7 +42,7 @@ static void	swap(t_stack *top)
 	top->next->main_index = tmp;
 }
 
-static void	push(t_stack **top1, t_stack **top2)
+static void	push_stack(t_stack **top1, t_stack **top2)
 {
 	t_stack	*tmp;
 
@@ -57,18 +57,18 @@ static void	push(t_stack **top1, t_stack **top2)
 void	swap_move(t_stack **sa, t_stack **sb, char *choice)
 {
 	if (ft_strcmp(choice, "sa") == 0)
-		swap(*sa);
+		swap_top(*sa);
 	else if (ft_strcmp(choice, "sb") == 0)
-		swap(*sb);
+		swap_top(*sb);
 	else if (ft_strcmp(choice, "ss") == 0)
 	{
-		swap(*sa);
-		swap(*sb);
+		swap_top(*sa);
+		swap_top(*sb);
 	}
 	if (ft_strcmp(choice, "pa") == 0)
-		push(sb, sa);
+		push_stack(sb, sa);
 	else if (ft_strcmp(choice, "pb") == 0)
-		push(sa, sb);
+		push_stack(sa, sb);
 	ft_putstr(choice);
 	ft_putstr("\n");
 }
@@ -79,7 +79,7 @@ void	small_sort(t_stack **st)
 
 	if (is_sorted(*st))
 		return ;
-	max_id = get_max_index(*st);
+	max_id = find_max_index(*st);
 	if ((*st)->main_index == max_id)
 		rotate_move(st, NULL, "ra");
 	else if ((*st)->next->main_index == max_id)

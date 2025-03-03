@@ -6,13 +6,13 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:47:35 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 11:43:06 by mg               ###   ########.fr       */
+/*   Updated: 2025/03/03 10:45:47 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-int	absolute(int n)
+int	abs_value(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -28,8 +28,8 @@ void	calculate_moves(t_stack **sa, t_stack **sb)
 
 	a = *sa;
 	b = *sb;
-	size_a = get_stack_size(a);
-	size_b = get_stack_size(b);
+	size_a = stack_size(a);
+	size_b = stack_size(b);
 	while (b)
 	{
 		b->mv_b = b->position;
@@ -42,7 +42,7 @@ void	calculate_moves(t_stack **sa, t_stack **sb)
 	}
 }
 
-int	get_a_position(t_stack **sa, int b_index, int max, int a_pos)
+int	find_a_position(t_stack **sa, int b_index, int max, int a_pos)
 {
 	t_stack	*a;
 
@@ -71,7 +71,7 @@ int	get_a_position(t_stack **sa, int b_index, int max, int a_pos)
 	return (a_pos);
 }
 
-void	get_stack_positions(t_stack **st)
+void	update_stack_positions(t_stack **st)
 {
 	t_stack	*s;
 	int		i;
@@ -92,12 +92,12 @@ void	where_fit_in_a(t_stack **sa, t_stack **sb)
 	int		a_pos;
 
 	b = *sb;
-	get_stack_positions(sa);
-	get_stack_positions(sb);
+	update_stack_positions(sa);
+	update_stack_positions(sb);
 	a_pos = 0;
 	while (b)
 	{
-		a_pos = get_a_position(sa, b->main_index, INT_MAX, a_pos);
+		a_pos = find_a_position(sa, b->main_index, INT_MAX, a_pos);
 		b->where_fit = a_pos;
 		b = b->next;
 	}

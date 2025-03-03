@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_args.c                                       :+:      :+:    :+:   */
+/*   args_parser.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 12:02:04 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 11:42:54 by mg               ###   ########.fr       */
+/*   Updated: 2025/03/03 10:40:19 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	check_double(int num, char **args, int i)
 	return (1);
 }
 
-int	check_is_num(char *av)
+int	check_digit(char *av)
 {
 	int	y;
 
@@ -65,7 +65,7 @@ int	validate_args(char **tmp, char **tmp_bis)
 	{
 		if (!check_limit(ft_atoi(tmp[i])) || \
 			!check_double(ft_atoi(tmp[i]), tmp, i) || \
-			!check_is_num(tmp[i]))
+			!check_digit(tmp[i]))
 			free_and_exit(tmp_bis);
 		i++;
 	}

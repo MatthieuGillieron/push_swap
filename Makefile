@@ -12,14 +12,14 @@ SRCDIR = src
 OBJDIR = obj
 
 SRC = main.c \
-      operations/operations.c \
-      operations/op2.c \
-      operations/helper_op.c \
-	  operations/init_stack.c \
-      parsing/parse_args.c \
+      operations/utils_op.c \
+      operations/stack_op.c \
+      operations/stack_moves.c \
+	  operations/stack_init.c \
+      parsing/args_parser.c \
       sorting/sort.c \
-      utils/1.c \
-      utils/2.c \
+      utils/utils_rotate.c \
+      utils/utils_strings.c \
       utils/free_struct.c
 
 # Chemin vers la bibliothèque libft
@@ -28,7 +28,7 @@ LIBFT = libft.a
 # Génération des noms de fichiers objets
 OBJ = $(addprefix $(OBJDIR)/, $(notdir $(SRC:.c=.o)))
 
-SUCCESS = "\033[1;35m✅ Compilation réussie de PUSH_SWAP!\033[0m"
+SUCCESS = "\033[1;92m✅ Compilation réussie ! ✅\033[0m"
 
 all: $(NAME)
 
@@ -53,20 +53,18 @@ $(LIBFT):
 	@make -C $(LIBDIR)
 	@cp $(LIBDIR)/$(LIBFT) .
 
-# Nettoyage des fichiers objets
+
 clean:
 	@$(RM) $(OBJ)
 	@rmdir $(OBJDIR) 2>/dev/null || true
 	@make -C $(LIBDIR) clean
 
-# Nettoyage complet (objets et exécutable)
 fclean: clean
 	@$(RM) $(NAME) $(LIBFT)
 	@$(RM) libft.a
 	@make -C $(LIBDIR) fclean
 	@rmdir $(OBJDIR) 2>/dev/null || true
 
-# Recompilation complète
 re: fclean all
 
 .PHONY: all clean fclean re

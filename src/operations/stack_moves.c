@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op2.c                                              :+:      :+:    :+:   */
+/*   stack_moves.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:49:59 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 11:42:58 by mg               ###   ########.fr       */
+/*   Updated: 2025/03/03 10:52:10 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
 
-int	get_lower_position(t_stack **st)
+int	find_lower_pos(t_stack **st)
 {
 	t_stack	*s;
 	int		low_index;
@@ -21,7 +21,7 @@ int	get_lower_position(t_stack **st)
 
 	s = *st;
 	low_index = INT_MAX;
-	get_stack_positions(st);
+	update_stack_positions(st);
 	low_position = s->position;
 	while (s)
 	{
@@ -35,13 +35,13 @@ int	get_lower_position(t_stack **st)
 	return (low_position);
 }
 
-static void	last_rotates(t_stack **sa)
+static void	final_rotates(t_stack **sa)
 {
 	int	size;
 	int	lower_position;
 
-	size = get_stack_size(*sa);
-	lower_position = get_lower_position(sa);
+	size = stack_size(*sa);
+	lower_position = find_lower_pos(sa);
 	if (lower_position > size / 2)
 	{
 		while (lower_position++ < size)
@@ -60,7 +60,7 @@ static void	push_b_save_3(t_stack **sa, t_stack **sb)
 	int		pushed;
 	int		i;
 
-	size = get_stack_size(*sa);
+	size = stack_size(*sa);
 	pushed = 0;
 	i = 0;
 	while (size > 6 && i < size && pushed < size / 2)
@@ -89,8 +89,8 @@ void	big_sort(t_stack **sa, t_stack **sb)
 	{
 		where_fit_in_a(sa, sb);
 		calculate_moves(sa, sb);
-		less_moves_sort(sa, sb);
+		best_move(sa, sb);
 	}
 	if (!is_sorted(*sa))
-		last_rotates(sa);
+		final_rotates(sa);
 }

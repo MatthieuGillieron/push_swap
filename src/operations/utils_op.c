@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper_op.c                                        :+:      :+:    :+:   */
+/*   utils_op.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:50:01 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 11:42:59 by mg               ###   ########.fr       */
+/*   Updated: 2025/03/03 10:49:39 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	rotate_b(t_stack **sb, int *mv_b)
 	}
 }
 
-void	less_moves_sort(t_stack **sa, t_stack **sb)
+void	best_move(t_stack **sa, t_stack **sb)
 {
 	t_stack	*b;
 	int		less_moves;
@@ -77,9 +77,9 @@ void	less_moves_sort(t_stack **sa, t_stack **sb)
 	less_moves = INT_MAX;
 	while (b)
 	{
-		if (absolute(b->mv_a) + absolute(b->mv_b) < absolute(less_moves))
+		if (abs_value(b->mv_a) + abs_value(b->mv_b) < abs_value(less_moves))
 		{
-			less_moves = absolute(b->mv_a) + absolute(b->mv_b);
+			less_moves = abs_value(b->mv_a) + abs_value(b->mv_b);
 			mv_a = b->mv_a;
 			mv_b = b->mv_b;
 		}

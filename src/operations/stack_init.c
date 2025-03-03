@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack.c                                       :+:      :+:    :+:   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 14:50:37 by mg                #+#    #+#             */
-/*   Updated: 2025/02/26 14:50:53 by mg               ###   ########.fr       */
+/*   Updated: 2025/03/03 10:52:43 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-void	get_main_index(t_stack *sa, int size)
+void	assign_main_index(t_stack *sa, int size)
 {
 	t_stack	*a;
 	t_stack	*max_address;
@@ -41,7 +41,7 @@ void	get_main_index(t_stack *sa, int size)
 	}
 }
 
-int	get_stack_size(t_stack *st)
+int	stack_size(t_stack *st)
 {
 	int		size;
 	t_stack	*s;
@@ -73,7 +73,7 @@ t_stack	*new_node(int n)
 	return (s);
 }
 
-void	add_at_end(t_stack **st, t_stack *new)
+void	append_node(t_stack **st, t_stack *new)
 {
 	t_stack	*s;
 
@@ -107,7 +107,7 @@ t_stack	*create_stack(int ac, char **av)
 		if (i == 0)
 			sa = new_node((int)n);
 		else
-			add_at_end(&sa, new_node((int)n));
+			append_node(&sa, new_node((int)n));
 		i++;
 	}
 	if (ac == 2)
