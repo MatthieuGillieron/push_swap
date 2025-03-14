@@ -26,18 +26,20 @@ Pour réussir ce projet, j’ai utilisé différentes techniques comme les tri p
 
 ### 1. Cloner le repository
 
-Commencez par cloner le repository depuis GitHub :
 
 ```bash
 git clone https://github.com/matthieugillieron/pushswap.git
 cd pushswap
 ```
 ### 2. Compiler le projet
-Ensuite, vous devez compiler le projet avec Make
 
-```make```
 
-### 3. Utilisation de l'exécutable
-Pour utiliser l'exécutable, vous devez fournir une liste de nombres à trier en argument. Par exemple :
+```bash
+make
+```
 
-```./pushswap 3 2 1 5 4```
+### 3. Utilisation de l'exécutablePour utiliser l'exécutable, vous devez fournir une liste de nombres à trier en argument. Par exemple :
+
+```bash
+./pushswap 3 2 1 5 4
+```
