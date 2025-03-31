@@ -1,5 +1,7 @@
 # Pushswap – Projet 42
 
+[![English](https://img.shields.io/badge/English-blue.svg)](./READMEen.md)   [![Français](https://img.shields.io/badge/Français-gray.svg)](./README.md)  
+
 Bienvenue dans **Pushswap**, mon projet à l'école 42. Le but de ce projet est de trier une pile de nombres à l'aide d'algorithmes efficaces et en utilisant un nombre limité d'opérations. Ce projet m'a permis de perfectionner mes compétences en algorithmique, en optimisant le tri et en travaillant sur des structures de données simples mais puissantes.
 
 <br>
