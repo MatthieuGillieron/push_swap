@@ -33,3 +33,16 @@ git clone https://github.com/matthieugillieron/pushswap.git
 cd pushswap
 ```
 
+### 2. Compile the project
+
+
+```bash
+make
+```
+
+### 3. Run the executable
+
+```bash
+./pushswap 3 2 1 5 4
+```
+
